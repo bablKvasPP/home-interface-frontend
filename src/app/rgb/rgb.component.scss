@@ -1,0 +1,30 @@
+.slider {
+  --SliderColor: black;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background-color: #DEE2E6;
+}
+
+.blue-slider {
+  --SliderColor: #0d6efd;
+}
+
+.green-slider {
+  --SliderColor: #198754;
+}
+
+.red-slider {
+  --SliderColor: #dc3545;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 10px;
+  background-color: var(--SliderColor);
+  overflow: visible;
+  cursor: pointer;
+}

@@ -1,0 +1,31 @@
+<div class="card mt-5">
+  <h5 class="card-header">Управление светом</h5>
+  <div class="card-body">
+    <form *ngIf="rgb !== undefined">
+      <label class="form-label d-inline-flex justify-content-between w-100">
+        <div>Красный</div>
+        <p class="text-muted">{{rgb.r}}</p>
+      </label>
+      <input type="range" class="slider red-slider" min="0" max="255" (change)="handleEvent('r', $event)"
+             [value]="rgb.r">
+
+      <label class="form-label d-inline-flex justify-content-between w-100">
+        <div>Зеленый</div>
+        <p class="text-muted">{{rgb.g}}</p>
+      </label>
+      <input type="range" class="slider green-slider" min="0" max="255" (change)="handleEvent('g', $event)" [value]="rgb.g">
+
+      <label class="form-label d-inline-flex justify-content-between w-100">
+        <div>Синий</div>
+        <p class="text-muted">{{rgb.b}}</p>
+      </label>
+      <input type="range" class="slider blue-slider" min="0" max="255" (change)="handleEvent('b', $event)" [value]="rgb.b">
+    </form>
+    <span class="placeholder col-12" *ngIf="rgb === undefined"></span>
+    <p class="card-text text-muted fst-italic" *ngIf="lastUpdated === undefined"><span
+      class="placeholder col-12"></span></p>
+    <p class="card-text text-muted fst-italic text-center" *ngIf="lastUpdated !== undefined">
+      Обновленно {{ lastUpdated | date : "mediumTime" }}</p>
+    <button class="btn btn-outline-primary" (click)="update()">🔄</button>
+  </div>
+</div>

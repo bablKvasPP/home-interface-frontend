@@ -1,0 +1,10 @@
+<div class="card mt-2">
+  <h5 class="card-header">Освещнность</h5>
+  <div class="card-body">
+    <h5 class="card-title w-100 text-center" *ngIf="illuminationValue === undefined"><span class="placeholder col-8"></span></h5>
+    <h5 class="card-title w-100 text-center" *ngIf="illuminationValue !== undefined">{{illuminationValue}}%</h5>
+    <p class="card-text text-muted fst-italic" *ngIf="lastUpdated === undefined"><span class="placeholder col-12"></span></p>
+    <p class="card-text text-muted fst-italic text-center" *ngIf="lastUpdated !== undefined">Обновленно {{ lastUpdated | date : "mediumTime" }}</p>
+    <button class="btn btn-outline-primary" (click)="update()">🔄</button>
+  </div>
+</div>
