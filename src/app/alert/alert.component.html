@@ -1,0 +1,17 @@
+<div class="card mt-2">
+  <h5 class="card-header">Сигнализация</h5>
+  <div class="card-body">
+    <label class="form-label d-inline-flex justify-content-between w-100">
+      <div>Критическое значение</div>
+      <p class="text-muted">
+        {{ alertTemperatureValue > 0? "+":"-"}}
+        {{ alertTemperatureValue | abs}} С<sup>°</sup></p>
+    </label>
+    <input type="range" class="form-range" (change)="processEvent($event)" min="-50" max="90"
+           [value]="alertTemperatureValue">
+    <p class="card-text text-muted fst-italic" *ngIf="lastUpdated === undefined"><span
+      class="placeholder col-12"></span></p>
+    <p class="card-text text-muted fst-italic text-center" *ngIf="lastUpdated !== undefined">
+      Обновленно {{ lastUpdated | date : "mediumTime" }}</p>
+  </div>
+</div>

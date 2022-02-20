@@ -1,10 +1,13 @@
 <div class="card mt-5">
   <h5 class="card-header">Температура</h5>
   <div class="card-body">
-    <h5 class="card-title w-100 text-center" *ngIf="tempValue !== undefined">{{ tempValue }}º</h5>
-    <h5 class="card-title w-100 text-center" *ngIf="tempValue === undefined"><span class="placeholder col-8"></span></h5>
-    <p class="card-text text-muted fst-italic" *ngIf="lastUpdated === undefined"><span class="placeholder col-12"></span></p>
-    <p class="card-text text-muted fst-italic text-center" *ngIf="lastUpdated !== undefined">Обновленно {{ lastUpdated | date : "mediumTime" }}</p>
+    <h5 class="card-title w-100 text-center" *ngIf="tempValue !== undefined">{{ tempValue }}<sup>°</sup></h5>
+    <h5 class="card-title w-100 text-center" *ngIf="tempValue === undefined"><span class="placeholder col-8"></span>
+    </h5>
+    <p class="card-text text-muted fst-italic" *ngIf="lastUpdated === undefined"><span
+      class="placeholder col-12"></span></p>
+    <p class="card-text text-muted fst-italic text-center" *ngIf="lastUpdated !== undefined">
+      Обновленно {{ lastUpdated | date : "mediumTime" }}</p>
     <button class="btn btn-outline-primary" (click)="update()">🔄</button>
   </div>
 </div>
