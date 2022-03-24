@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ApiService} from "../api.service";
 
 @Component({
@@ -7,11 +7,17 @@ import {ApiService} from "../api.service";
 })
 export class TemperatureComponent implements OnInit {
 
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService) {
+  }
+
   tempValue: number | undefined = 12
   lastUpdated: number | undefined = Date.now()
+
   ngOnInit(): void {
-    // this.update()
+    this.update()
+    setInterval(() => {
+      this.update()
+    }, 30000)
   }
 
   update(): void {
@@ -22,6 +28,4 @@ export class TemperatureComponent implements OnInit {
       this.lastUpdated = Date.now()
     })
   }
-
-
 }

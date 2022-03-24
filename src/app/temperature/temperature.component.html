@@ -1,7 +1,17 @@
 <div class="card mt-5">
-  <h5 class="card-header">Температура</h5>
+  <h5 class="card-header">Температура и Влажность</h5>
   <div class="card-body">
-    <h5 class="card-title w-100 text-center" *ngIf="tempValue !== undefined">{{ tempValue }}<sup>°</sup></h5>
+    <div class="card-title w-100 text-center" *ngIf="tempValue !== undefined">
+      <div class="container">
+        <div class="row">
+          <div class="col">Температура</div>
+          <div class="col">Влажность</div>
+        </div>
+        <div class="row">
+          <div class="col"><h5>{{ tempValue }}<sup>°</sup>C</h5></div>
+          <div class="col"><h5>100%</h5></div>
+        </div>
+      </div></div>
     <h5 class="card-title w-100 text-center" *ngIf="tempValue === undefined"><span class="placeholder col-8"></span>
     </h5>
     <p class="card-text text-muted fst-italic" *ngIf="lastUpdated === undefined"><span

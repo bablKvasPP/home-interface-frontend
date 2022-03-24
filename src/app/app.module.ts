@@ -11,6 +11,8 @@ import { HeaderComponent } from './header/header.component';
 import { HeaterThresholdComponent } from './heater-threshold/heater-threshold.component';
 import { AbsPipe } from './abs.pipe';
 import { AlertComponent } from './alert/alert.component';
+import { FanComponent } from './fan/fan.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,14 @@ import { AlertComponent } from './alert/alert.component';
     HeaderComponent,
     HeaterThresholdComponent,
     AbsPipe,
-    AlertComponent
+    AlertComponent,
+    FanComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
